@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopNest - Shop your favorite products online">
+  <title>ShopNest | Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">Shop<span>Nest</span></a>
+
+    <label class="search-box">
+      <span aria-hidden="true">⌕</span>
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search products..."
+        aria-label="Search products"
+      >
+    </label>
+
+    <button class="cart-toggle" id="cartToggle" type="button">
+      🛒 Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR EVERYDAY MARKETPLACE</p>
+        <h1>Find what you <span>love.</span></h1>
+        <p>Discover great products at prices you'll love.</p>
+        <a href="#productsSection" class="shop-button">Shop Now →</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">🛍️</div>
+    </section>
+
+    <section id="productsSection" class="products-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE OUR COLLECTION</p>
+          <h2>Featured Products</h2>
+        </div>
+        <p id="resultCount" aria-live="polite">Loading products...</p>
+      </div>
+
+      <nav class="filters" id="categoryFilters"
+           aria-label="Filter by category">
+        <button class="filter-btn active" data-category="All"
+                type="button" aria-pressed="true">All</button>
+        <button class="filter-btn" data-category="Electronics"
+                type="button" aria-pressed="false">Electronics</button>
+        <button class="filter-btn" data-category="Clothing"
+                type="button" aria-pressed="false">Clothing</button>
+        <button class="filter-btn" data-category="Footwear"
+                type="button" aria-pressed="false">Footwear</button>
+        <button class="filter-btn" data-category="Books"
+                type="button" aria-pressed="false">Books</button>
+      </nav>
+
+      <p id="statusMessage" class="status-message"
+         role="status" aria-live="polite"></p>
+
+      <div id="productGrid" class="product-grid"></div>
+
+      <p id="emptyMessage" class="empty-message" hidden>
+        <span>🔎</span>
+        <strong>No products found</strong>
+        Try another search term or category.
+      </p>
+    </section>
+  </main>
+
+  <div id="cartOverlay" class="cart-overlay" hidden></div>
+
+  <aside id="cartPanel" class="cart-panel"
+         aria-label="Shopping cart" aria-hidden="true"
+         inert>
+    <div class="cart-heading">
+      <div>
+        <p class="eyebrow">YOUR SHOPPING BAG</p>
+        <h2>Your Cart (<span id="cartHeadingCount">0</span>)</h2>
+      </div>
+      <button id="closeCart" class="icon-btn"
+              type="button" aria-label="Close cart">✕</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div id="emptyCart" class="empty-cart">
+      <span>🛒</span>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven't added anything yet.</p>
+      <button id="continueShopping" class="shop-button"
+              type="button">Continue Shopping</button>
+    </div>
+
+    <div id="cartFooter" class="cart-footer" hidden>
+      <div class="total-row">
+        <span>Subtotal</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+      <p class="shipping-note">Shipping and taxes calculated at checkout.</p>
+      <button id="checkoutButton" class="checkout-btn"
+              type="button">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <p>© 2026 ShopNest. Made for your everyday shopping.</p>
+  </footer>
+</body>
+</html>
